@@ -2,9 +2,34 @@
 
 {{ project_description }}
 
+## Project Structure
+
+```
+{{ project_slug }}/
+├── .github/workflows/ci.yml
+├── .gitlab-ci.yml
+├── .gitignore
+├── scripts/
+│   ├── setup.sh
+│   └── test.sh
+└── README.md
+```
+
 ## Getting Started
 
-TODO: Add instructions on how to set up and run the project.
+```bash
+bash scripts/setup.sh
+```
+
+## Running Tests
+
+```bash
+bash scripts/test.sh
+```
+
+## CI/CD
+
+This project includes pipelines for both **GitHub Actions** (`.github/workflows/ci.yml`) and **GitLab CI** (`.gitlab-ci.yml`).
 
 ## Author
 
