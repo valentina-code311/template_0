@@ -1,0 +1,24 @@
+_subdirectory: template
+_answers_file: .copier-answers.yml
+
+project_name:
+  type: str
+  help: "Name of the project"
+
+project_slug:
+  type: str
+  default: "{{ project_name | lower | replace(' ', '-') }}"
+  help: "Slug used for directories and URLs"
+
+project_description:
+  type: str
+  help: "Short description of the project"
+  default: ""
+
+author_name:
+  type: str
+  help: "Author's full name"
+
+author_email:
+  type: str
+  help: "Author's email address"

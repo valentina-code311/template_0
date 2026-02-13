@@ -1,0 +1,39 @@
+stages:
+  - lint
+  - test
+  - build
+  - deploy
+
+variables:
+  PROJECT_NAME: "{{ project_slug }}"
+
+lint:
+  stage: lint
+  script:
+    - echo "Running linting for {{ project_name }}"
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+
+test:
+  stage: test
+  script:
+    - echo "Running tests for {{ project_name }}"
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+
+build:
+  stage: build
+  script:
+    - echo "Building {{ project_name }}"
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+
+deploy:
+  stage: deploy
+  script:
+    - echo "Deploying {{ project_name }}"
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+  when: manual
