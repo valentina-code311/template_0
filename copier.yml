@@ -1,6 +1,9 @@
 _subdirectory: template
 _answers_file: .copier-answers.yml
 
+_tasks:
+  - ["bash", "{{ _copier_conf.src_path }}/scripts/post_copy_message.sh", "{{ project_name }}", "{{ _copier_conf.dst_path }}"]
+
 project_name:
   type: str
   help: "Name of the project"
