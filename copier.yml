@@ -25,3 +25,7 @@ author_name:
 author_email:
   type: str
   help: "Author's email address"
+
+fake:
+  type: str
+  help: "parametro de prueba"
